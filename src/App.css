@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f7fa;
+  color: #333;
+  padding: 20px;
+}
+
+#root {
+  min-height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.app {
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: #4299e1;
+}
+
+.search-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover:not(:disabled) {
+  background-color: #3182ce;
+}
+
+.search-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.results {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.state {
+  text-align: center;
+  color: #718096;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.state.error {
+  color: #e53e3e;
+}
+
+.state.empty {
+  color: #718096;
+}
+
+.country-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.country-flag {
+  max-width: 100%;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+
+.country-card h2 {
+  color: #2d3748;
+  margin: 0.5rem 0;
+  font-size: 1.75rem;
+}
+
+.official-name {
+  color: #718096;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.info-grid {
+  display: grid;
+  gap: 0.875rem;
+  text-align: left;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.info-item:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.label {
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.value {
+  color: #2d3748;
+  text-align: right;
+  word-break: break-word;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 12px;
+  }
+
+  .country-card {
+    padding: 1.5rem;
+  }
+
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .value {
+    text-align: left;
+  }
+}
